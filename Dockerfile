@@ -1,5 +1,3 @@
-FROM openjdk:8-jre-slim
-WORKDIR /home
-COPY /target/spring-h2-demo.jar spring-h2-demo.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "spring-h2-demo.jar"]
+FROM tomcat:8
+# Take the war and copy to webapps of tomcat
+COPY target/newapp1.jar /usr/local/tomcat/webapps/
